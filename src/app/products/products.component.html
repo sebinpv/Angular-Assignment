@@ -1,0 +1,33 @@
+
+  <!-- Display categories for filtering -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <h5>Filter by Category:</h5>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-primary"
+                  *ngFor="let category of categories"
+                  (click)="filterProductsByCategory(category)">
+            {{ category }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let product of filteredProducts">
+        <div class="card">
+          <img [src]="product.thumbnail" class="card-img-top" [alt]="product.title">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text"><strong>Price:</strong> ${{ product.price.toFixed(2) }}</p>
+            <button class="btn btn-primary" (click)="buyNow(product)">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
