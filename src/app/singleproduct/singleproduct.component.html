@@ -1,0 +1,31 @@
+<div *ngIf="product" class="container my-5">
+    <div class="row">
+      <!-- Product Image Section -->
+      <div class="col-md-6">
+        <div class="product-image">
+          <img ngSrc={{product.thumbnail}} alt="{{ product.title }}" class="img-fluid rounded shadow" height="300" width="300">
+        </div>
+      </div>
+  
+      <!-- Product Details Section -->
+      <div class="col-md-6">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <p class="product-price">$ {{ product.price.toFixed(2) }}</p>
+        <p class="product-description">{{ product.description }}</p>
+        
+        <!-- Action Buttons -->
+        <div class="product-actions mt-4">
+          <button class="btn btn-primary btn-lg me-2" (click)="buyNow(product)">Buy Now</button>
+          <button class="btn btn-secondary btn-lg me-2" (click)="addToCart(product)">Add to Cart</button>
+          <button class="btn btn-outline-primary btn-lg" (click)="addToWishlist(product)">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Customer Reviews Section -->
+    <div class="mt-5">
+      <h2>Customer Reviews</h2>
+      <!-- Reviews content goes here -->
+    </div>
+  </div>
+  

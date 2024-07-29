@@ -43,6 +43,11 @@
   cursor: pointer;
 }
 
+.btn-danger {
+  background-color: red;
+  color: #ffffff;
+}
+
 .btn:hover {
   background-color: #0056b3;
 }
